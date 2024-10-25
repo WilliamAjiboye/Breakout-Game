@@ -30,11 +30,10 @@ while game_is_on:
         ball.bounce_x()
     if ball.xcor() >=400:
         pass
-
-
-
-
-
-
+    for items in bricks.bricks_list[:]:
+        if ball.distance(items) <= 30:
+            ball.bounce_y()
+            items.hideturtle()
+    bricks.bricks_list = [brick for brick in bricks.bricks_list if brick.isvisible()]
 
 window.mainloop()

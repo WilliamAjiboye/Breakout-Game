@@ -3,7 +3,7 @@ from turtle import Turtle
 
 
 random_x = random.randint(-380, 380)
-random_y = -150
+random_y = -100
 
 class Ball(Turtle):
     def __init__(self):

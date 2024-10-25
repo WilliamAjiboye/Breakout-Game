@@ -3,11 +3,11 @@ from turtle import Turtle
 
 class Bricks:
     def __init__(self):
-        self.bricks = []
+        self.bricks_list = []
         self.rows = 8 # Number of color rows
         self.columns = 10  # Bricks per row
         self.start_x = 360
-        self.start_y = -100
+        self.start_y = -40
         self.colors = ['yellow', 'yellow', 'green', 'green', 'orange', 'orange', 'red', 'red']
 
     def create_bricks(self):
@@ -25,5 +25,5 @@ class Bricks:
                 brick.goto(x_pos, y_pos)
 
                 # Append brick to list
-                self.bricks.append(brick)
+                self.bricks_list.append(brick)
 
