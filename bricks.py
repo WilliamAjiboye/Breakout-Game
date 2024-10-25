@@ -1,42 +1,29 @@
-import time
 from turtle import Turtle
 
 
 class Bricks:
     def __init__(self):
         self.bricks = []
+        self.rows = 8 # Number of color rows
+        self.columns = 10  # Bricks per row
         self.start_x = 360
         self.start_y = -100
+        self.colors = ['yellow', 'yellow', 'green', 'green', 'orange', 'orange', 'red', 'red']
 
     def create_bricks(self):
-        for i in range(80):
+        for row in range(self.rows):
+            for col in range(self.columns):
+                # Initialize turtle for each brick
+                brick = Turtle('square')
+                brick.shapesize(stretch_len=3.9)
+                brick.penup()
+                brick.color(self.colors[row])
 
-            # elif i == 30:
-            #     self.start_x = 360
-            #     self.start_y += 22
-            # elif i == 50:
-            #     self.start_x = 360
-            #     self.start_y += 22
-            time.sleep(3)
-            tim = Turtle('square')
-            tim.color('yellow')
-            tim.shapesize(stretch_len=3.9)
-            tim.penup()
-            if i < 20:
-                if i == 10:
-                    self.start_x = 360
-                    self.start_y += 22
-                tim.color('yellow')
-                tim.goto(self.start_x, self.start_y)
-                self.start_x -= 80
-                self.bricks.append(tim)
-            elif 20 <= i < 40:
-                # self.start_y+=22
-                tim.color('green')
-                tim.goto(self.start_x, self.start_y)
-                self.start_x -= 80
-                self.bricks.append(tim)
-            elif 40 <= i < 60:
-                tim.color('orange')
-            elif i >= 60:
-                tim.color('red')
+                # Calculate and set position
+                x_pos = self.start_x - (col * 80)
+                y_pos = self.start_y + (row * 22)
+                brick.goto(x_pos, y_pos)
+
+                # Append brick to list
+                self.bricks.append(brick)
+

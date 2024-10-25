@@ -15,7 +15,6 @@ paddle = Paddle((0,-350))
 ball = Ball()
 bricks = Bricks()
 bricks.create_bricks()
-
 window.onkey(paddle.move_right,'Right')
 window.onkey(paddle.move_left,'Left')
 
