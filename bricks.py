@@ -7,7 +7,7 @@ class Bricks:
         self.rows = 8 # Number of color rows
         self.columns = 10  # Bricks per row
         self.start_x = 360
-        self.start_y = -40
+        self.start_y = -10
         self.colors = ['yellow', 'yellow', 'green', 'green', 'orange', 'orange', 'red', 'red']
 
     def create_bricks(self):

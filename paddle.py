@@ -5,13 +5,13 @@ class Paddle(Turtle):
         super().__init__()
         self.shape('square')
         self.penup()
+        self.speed('fastest')
         self.shapesize(stretch_len=5)
         self.color('blue')
         self.goto(position)
 
 
     def move_right(self):
-        print('yes')
         new_cor = (self.xcor() + 20)
         self.goto(new_cor, self.ycor())
 

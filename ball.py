@@ -3,7 +3,7 @@ from turtle import Turtle
 
 
 random_x = random.randint(-380, 380)
-random_y = -100
+random_y = -40
 
 class Ball(Turtle):
     def __init__(self):
@@ -27,6 +27,8 @@ class Ball(Turtle):
 
     def bounce_x(self):
         self.x_move *= -1
+    def reset(self):
+        self.goto(random_x,random_y)
 
 
 
